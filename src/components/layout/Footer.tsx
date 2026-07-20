@@ -19,7 +19,6 @@ function Footer() {
             {/* Brand */}
             <div className="space-y-4">
               <Logo />
-              <h2 className="text-2xl font-semibold">Evan Ohemi</h2>
 
               <p className="max-w-xs text-muted-foreground leading-relaxed">
                 Frontend Developer building responsive, accessible, and
