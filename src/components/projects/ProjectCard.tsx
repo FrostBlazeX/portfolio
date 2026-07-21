@@ -27,6 +27,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               alt={project.name}
               width={1200}
               height={800}
+              sizes="(max-width: 768px) 100vw, 400px"
               className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
@@ -41,7 +42,7 @@ function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <Badge
-          variant="animated"
+          variant="outline"
           className="w-fit transition-transform duration-300 group-hover:translate-x-1"
         >
           {project.category}
@@ -82,23 +83,15 @@ function ProjectCard({ project }: ProjectCardProps) {
 
       <CardFooter className="relative z-20 mt-auto gap-4">
         {project.liveUrl && (
-          <Button variant="animated">
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              Live Demo
-            </a>
-          </Button>
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            <Button variant="animated">Live Demo</Button>
+          </a>
         )}
 
         {project.githubUrl && (
-          <Button variant="animated">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </Button>
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            <Button variant="animated">GitHub</Button>
+          </a>
         )}
       </CardFooter>
     </Card>

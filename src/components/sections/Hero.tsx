@@ -23,8 +23,9 @@ function Hero() {
             <Image
               src="/images/profile.jpeg"
               alt="Evan Ohemi"
-              width={500}
-              height={500}
+              width={384}
+              height={384}
+              sizes="(max-width: 768px) 100vw, 400px"
               priority
               className="h-72 w-72 rounded-2xl object-cover shadow-sm md:h-96 md:w-96"
             />
@@ -35,7 +36,3 @@ function Hero() {
   );
 }
 export default Hero;
-
-{
-  /* <div className="flex aspect-square w-full max-w-sm items-center justify-center rounded-2xl border bg-muted"></div> */
-}

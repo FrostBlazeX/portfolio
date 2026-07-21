@@ -37,6 +37,7 @@ async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
               alt={project.name}
               width={1200}
               height={800}
+              sizes="(max-width: 768px) 100vw, 400px"
               className="w-full rounded-lg border object-cover shadow-sm"
             />
 
