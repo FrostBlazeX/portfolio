@@ -53,10 +53,10 @@ function Footer() {
 
               <div className="space-y-2 text-muted-foreground">
                 <a
-                  href="mailto:ethaanfroost@gmail.com"
+                  href="mailto:evanohemi33@gmail.com"
                   className="group relative w-fit"
                 >
-                  ethaanfroost@gmail.com
+                  evanohemi33@gmail.com
                   <span className="absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full link-underline" />
                 </a>
 

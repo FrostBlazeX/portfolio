@@ -28,10 +28,10 @@ function ResumePage() {
 
             <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
               <a
-                href="mailto:ethaanfroost@gmail.com"
+                href="mailto:evanohemi33@gmail.com"
                 className="hover:text-foreground"
               >
-                ethaanfroost@gmail.com
+                evanohemi33@gmail.com
               </a>
 
               <a

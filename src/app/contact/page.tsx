@@ -7,8 +7,8 @@ import { Card, CardContent } from "@/components/ui/card";
 const contactLinks = [
   {
     name: "Email",
-    value: "ethaanfroost@gmail.com",
-    href: "mailto:ethaanfroost@gmail.com",
+    value: "evanohemi33@gmail.com",
+    href: "mailto:evanohemi33@gmail.com",
     icon: FaEnvelope,
   },
   {

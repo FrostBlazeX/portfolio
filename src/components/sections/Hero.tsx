@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className="py-6 md:py-10">
+    <section className="py-8 md:py-12">
       <Container>
         <div className="grid gap-16 items-center lg:grid-cols-2">
           <div className="space-y-8">

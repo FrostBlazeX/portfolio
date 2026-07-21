@@ -13,7 +13,7 @@ export const socialLinks = [
   },
   {
     label: "Email",
-    href: "https://ethaanfroost@gmail.com",
+    href: "mailto:evanohemi33@gmail.com",
     icon: FaEnvelope,
   },
 ];
