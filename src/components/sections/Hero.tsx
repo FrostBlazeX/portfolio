@@ -6,9 +6,9 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <section className="py-8 md:py-12">
+    <section className="pt-12 pb-16 md:pt-20 md:pb-24">
       <Container>
-        <div className="grid gap-16 items-center lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
           <div className="space-y-8">
             <ProfileCard />
 
@@ -19,7 +19,7 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:justify-end">
             <Image
               src="/images/profile.jpeg"
               alt="Evan Ohemi"

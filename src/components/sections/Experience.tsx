@@ -17,7 +17,7 @@ function Experience() {
       <Container>
         <SectionHeading name="Professional Experience" />
 
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
           {/* Left */}
           <div className="flex overflow-x-auto gap-1 md:min-w-45 md:flex-col">
             <div
@@ -55,7 +55,7 @@ function Experience() {
             role="tabpanel"
             id={`panel-${activeExperience}`}
             aria-labelledby={`tab-${activeExperience}`}
-            className="max-w-4xl space-y-8"
+            className="max-w-4xl space-y-10"
           >
             <h3 className="text-3xl font-semibold tracking-tight">
               {experience.role}
@@ -77,7 +77,7 @@ function Experience() {
               ))}
             </div>
 
-            <ul className="space-y-5">
+            <ul className="space-y-6">
               {experience.achievements.map((item) => (
                 <li
                   key={item}

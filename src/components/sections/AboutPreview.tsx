@@ -10,7 +10,7 @@ function AboutPreview() {
         <Reveal>
           <SectionHeading name="About Me" />
 
-          <div className=" flex max-w-4xl flex-col gap-8">
+          <div className=" flex max-w-4xl flex-col gap-6 md:gap-8">
             <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
               I'm Evan, a detail-oriented Frontend Developer presently located
               in Nigeria.

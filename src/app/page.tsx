@@ -7,7 +7,7 @@ import Experience from "@/components/sections/Experience";
 function page() {
   return (
     <>
-      <main className="space-y-24 md:space-y-30">
+      <main>
         <Hero />
         <AboutPreview />
         <Skills />
