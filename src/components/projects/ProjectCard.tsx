@@ -84,7 +84,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       <CardFooter className="relative z-20 mt-auto gap-4">
         {project.liveUrl && (
           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="animated">Live Demo</Button>
+            <Button variant="animated">Live App</Button>
           </a>
         )}
 
