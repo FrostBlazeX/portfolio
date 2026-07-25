@@ -15,32 +15,32 @@ function AboutPage() {
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Get to know me</h2>
 
-            <div className="max-w-3xl space-y-4 text-muted-foreground">
+            <div className="max-w-3xl text-lg space-y-4 text-muted-foreground">
               <p>
-                Hi, I'm Evan, a Frontend Developer based in Nigeria with a
-                passion for building responsive, accessible, and user-focused
-                web applications.
+                Hi, I’m Evan — a Frontend Developer based in Nigeria, passionate
+                about building responsive, accessible, and user-focused web
+                applications.
               </p>
 
               <p>
-                I enjoy turning ideas into clean, functional, and engaging
-                digital experiences. With a solid foundation in JavaScript and
-                experience across its modern ecosystem, I can quickly adapt to
-                different frameworks and technologies to deliver solutions that
-                meet each project's unique needs.
+                I enjoy turning ideas into clean, functional, engaging digital
+                experiences. With a solid foundation in JavaScript and
+                experience across its modern ecosystem, I adapt quickly to new
+                frameworks and technologies to deliver solutions tailored to
+                each project’s needs.
               </p>
 
               <p>
-                I'm someone who enjoys continuous learning, reading, and solving
-                challenging problems. Whether I'm debugging a complex issue or
-                learning a new technology, I find satisfaction in understanding
-                how things work and creating solutions that make an impact.
+                I’m driven by continuous learning and a love for solving hard
+                problems — whether that’s debugging a tricky issue or picking up
+                a new technology, I find real satisfaction in understanding how
+                things work and building solutions that make an impact.
               </p>
 
               <p>
-                When I'm not coding, you'll probably find me watching football,
-                reading, listening to music, or exploring new technologies and
-                ideas on the web.
+                Outside of code, you’ll find me watching football, reading,
+                listening to music, or exploring new ideas and technologies
+                online.
               </p>
             </div>
           </div>

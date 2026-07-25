@@ -11,28 +11,21 @@ function AboutPreview() {
           <SectionHeading name="About Me" />
 
           <div className=" flex max-w-4xl flex-col gap-6 md:gap-8">
-            <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-              I'm Evan, a detail-oriented Frontend Developer presently located
-              in Nigeria.
+            <h2 className="text-lg font-medium tracking-tight md:text-xl">
+              I’m Evan — a Frontend Developer in Nigeria who turns curiosity
+              about how the web works into responsive, accessible applications
+              people actually enjoy using.
             </h2>
 
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              My journey into frontend development started with a curiosity for
-              how websites are built and a desire to create meaningful digital
-              experiences. Over time, that curiosity grew into a passion for
-              building responsive and accessible web applications.
+            <p className="text-lg leading-relaxed">
+              I build with React, Next.js, TypeScript, and Tailwind CSS — from
+              CMS-driven websites to API-powered products, always aiming for
+              performance and accessibility.
             </p>
 
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              Over the years, I've built responsive web applications, CMS-driven
-              websites, and API-powered experiences using React, Next.js,
-              TypeScript, and Tailwind CSS.
-            </p>
-
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              I enjoy transforming ideas and designs into accessible, performant
-              user experiences while continuously learning and improving my
-              skills with modern technologies.
+            <p className="text-lg leading-relaxed">
+              Beyond the code, I’m continuously learning — staying close to
+              modern tools and pushing my craft forward.
             </p>
           </div>
         </Reveal>
