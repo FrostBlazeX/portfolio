@@ -20,7 +20,7 @@ const badgeVariants = cva(
           "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
         link: "text-primary underline-offset-4 hover:underline",
         animated:
-          "relative isolate overflow-hidden border border-black bg-transparent text-black transition-colors duration-300 before:absolute before:inset-0 before:-z-10 before:origin-bottom before:scale-y-0 before:bg-black before:transition-transform before:duration-300 before:ease-out before:content-[''] hover:text-white hover:before:scale-y-100 focus-visible:ring-2 focus-visible:ring-black/20",
+          "relative isolate overflow-hidden border border-foreground bg-transparent text-foreground transition-colors duration-300 before:absolute before:inset-0 before:-z-10 before:origin-bottom before:scale-y-0 before:bg-foreground before:transition-transform before:duration-300 before:ease-out before:content-[''] hover:text-background hover:before:scale-y-100 focus-visible:ring-2 focus-visible:ring-foreground/20",
       },
     },
     defaultVariants: {

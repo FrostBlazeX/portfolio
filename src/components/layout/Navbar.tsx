@@ -9,6 +9,7 @@ import NavLinks from "../sections/NavLinks";
 import MobileMenu from "../sections/MobileMenu";
 import Logo from "../sections/Logo";
 import SocialLinks from "../sections/SocialLinks";
+import { ThemeToggle } from "../shared/ThemeToggle";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 
@@ -25,22 +26,28 @@ function Navbar() {
             <NavLinks />
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <SocialLinks />
-            <Link href="/resume">
-              <Button variant="animated">Resume</Button>
-            </Link>
-          </div>
-          <div className="md:hidden">
-            <Sheet open={open} onOpenChange={setOpen}>
-              <SheetTrigger>
-                <Menu className="h-5 w-5" />
-              </SheetTrigger>
+          <div className="flex items-center gap-2 md:gap-4">
+            <div className="hidden md:flex items-center gap-4">
+              <SocialLinks />
+              <Link href="/resume">
+                <Button variant="animated">Resume</Button>
+              </Link>
+            </div>
 
-              <SheetContent side="right">
-                <MobileMenu closeMenu={() => setOpen(false)} />
-              </SheetContent>
-            </Sheet>
+            <ThemeToggle />
+
+            <div className="md:hidden">
+              <Sheet open={open} onOpenChange={setOpen}>
+                <SheetTrigger render={<Button variant="ghost" size="icon-sm" />}>
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Open menu</span>
+                </SheetTrigger>
+
+                <SheetContent side="right">
+                  <MobileMenu closeMenu={() => setOpen(false)} />
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </nav>
       </Container>
