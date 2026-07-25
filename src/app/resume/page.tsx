@@ -2,14 +2,47 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ExternalLink } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
+import { profile } from "@/data/profile";
+import { skills } from "@/data/skills";
+import { experiences } from "@/data/experience";
+import { getProjectBySlug } from "@/data/project";
 
 export const metadata: Metadata = {
   title: "Resume | Evan Ohemi",
   description:
     "Frontend Developer resume showcasing experience, skills, projects, and certifications.",
 };
+
+// Hand-picked highlights matching the downloadable PDF resume, kept separate
+// from the card-oriented copy in data/project.ts.
+const selectedProjects = [
+  {
+    slug: "store-front",
+    techStack: ["Next.js", "React", "TypeScript"],
+    bullets: [
+      "Built a responsive e-commerce platform with reusable React components and TypeScript-based logic.",
+      "Optimized layouts and navigation across desktop and mobile devices.",
+    ],
+  },
+  {
+    slug: "forkify-project",
+    techStack: ["JavaScript", "HTML", "CSS"],
+    bullets: [
+      "Built a recipe search application with dynamic data rendering and interactive UI.",
+      "Delivered a fully responsive experience across screen sizes.",
+    ],
+  }
+]
+  .map(({ slug, ...rest }) => {
+    const project = getProjectBySlug(slug);
+    return project ? { ...rest, project } : null;
+  })
+  .filter((entry): entry is NonNullable<typeof entry> => entry !== null);
 
 function ResumePage() {
   return (
@@ -19,18 +52,19 @@ function ResumePage() {
           <SectionHeading name="Resume" />
 
           {/* Header */}
-          <div className="space-y-2 border-b pb-6">
-            <h2 className="text-3xl font-bold">Ohemi Evan</h2>
+          <div className="space-y-3 border-b pb-6">
+            <h2 className="text-3xl font-bold">{profile.name}</h2>
 
             <p className="text-muted-foreground">
-              Frontend Developer • Lagos, Nigeria
+              {profile.title} • Lagos, Nigeria
             </p>
 
             <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
               <a
                 href="mailto:evanohemi33@gmail.com"
-                className="hover:text-foreground"
+                className="flex items-center gap-1.5 hover:text-foreground"
               >
+                <FaEnvelope className="h-4 w-4" />
                 evanohemi33@gmail.com
               </a>
 
@@ -38,8 +72,9 @@ function ResumePage() {
                 href="https://linkedin.com/in/evan-ohemi-bb2620410"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-foreground"
+                className="flex items-center gap-1.5 hover:text-foreground"
               >
+                <FaLinkedin className="h-4 w-4" />
                 LinkedIn
               </a>
 
@@ -47,8 +82,9 @@ function ResumePage() {
                 href="https://github.com/FrostBlazeX"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-foreground"
+                className="flex items-center gap-1.5 hover:text-foreground"
               >
+                <FaGithub className="h-4 w-4" />
                 GitHub
               </a>
             </div>
@@ -81,17 +117,29 @@ function ResumePage() {
           <section className="space-y-4">
             <h3 className="text-xl font-semibold">Technical Skills</h3>
 
-            <div className="space-y-2">
-              <p>
-                <strong>Languages & Frameworks:</strong> JavaScript (ES6+),
-                TypeScript, HTML5, CSS3, React.js, Next.js
-              </p>
+            <div className="space-y-3">
+              {skills.map((group) => (
+                <div
+                  key={group.category}
+                  className="flex flex-wrap items-baseline gap-2"
+                >
+                  <span className="shrink-0 text-sm font-semibold">
+                    {group.category}:
+                  </span>
 
-              <p>
-                <strong>Practices & Tools:</strong> Responsive Design,
-                Component-Based Architecture, Accessibility, Performance
-                Optimization, Git, Vercel
-              </p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((skill) => (
+                      <Badge
+                        key={skill.name}
+                        variant="secondary"
+                        className="rounded-md"
+                      >
+                        {skill.name}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -99,44 +147,38 @@ function ResumePage() {
           <section className="space-y-6">
             <h3 className="text-xl font-semibold">Experience</h3>
 
-            <div className="space-y-3">
-              <div>
-                <h4 className="font-semibold">Frontend Developer — Numro</h4>
+            <div className="space-y-6">
+              {experiences.map((exp) => (
+                <div key={exp.company} className="space-y-3">
+                  <div>
+                    <h4 className="font-semibold">
+                      {exp.role} — {exp.company}
+                    </h4>
 
-                <p className="text-sm text-muted-foreground">
-                  Oxford, United Kingdom • March 2026 – Present
-                </p>
-              </div>
+                    <p className="text-sm text-muted-foreground">
+                      {exp.location} • {exp.period}
+                    </p>
+                  </div>
 
-              <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-                <li>
-                  Collaborate remotely with the Lead Engineer and UI/UX Designer
-                  to deliver a complete marketing site revamp, translating Figma
-                  designs into responsive Next.js interfaces using Tailwind CSS.
-                </li>
+                  <div className="flex flex-wrap gap-2">
+                    {exp.technologies.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="rounded-md"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
 
-                <li>
-                  Partner with product managers and designers to convert
-                  business requirements into scalable, maintainable frontend
-                  solutions.
-                </li>
-
-                <li>
-                  Develop and optimize responsive, public-facing pages while
-                  implementing a shared design system across desktop and mobile.
-                </li>
-
-                <li>
-                  Build reusable UI components adopted across multiple pages,
-                  improving design consistency and reducing duplicated code.
-                </li>
-
-                <li>
-                  Contribute through a Git-based development workflow,
-                  participating in pull requests and code reviews before
-                  deployment.
-                </li>
-              </ul>
+                  <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+                    {exp.achievements.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -145,48 +187,59 @@ function ResumePage() {
             <h3 className="text-xl font-semibold">Selected Projects</h3>
 
             <div className="space-y-5">
-              <div>
-                <h4 className="font-semibold">
-                  Storefront — Furniture E-Commerce Platform
-                </h4>
+              {selectedProjects.map(({ project, techStack, bullets }) => (
+                <div key={project.slug} className="space-y-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h4 className="font-semibold">
+                      {project.name} — {project.description}
+                    </h4>
 
-                <p className="text-sm text-muted-foreground">
-                  Next.js • React • TypeScript
-                </p>
+                    <div className="flex gap-3 text-sm">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-muted-foreground hover:text-foreground"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5" />
+                          Live
+                        </a>
+                      )}
 
-                <ul className="mt-2 list-disc pl-5 text-muted-foreground">
-                  <li>
-                    Built a responsive e-commerce platform with reusable React
-                    components and TypeScript-based logic.
-                  </li>
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-muted-foreground hover:text-foreground"
+                        >
+                          <FaGithub className="h-3.5 w-3.5" />
+                          Code
+                        </a>
+                      )}
+                    </div>
+                  </div>
 
-                  <li>
-                    Optimized layouts and navigation across desktop and mobile
-                    devices.
-                  </li>
-                </ul>
-              </div>
+                  <div className="flex flex-wrap gap-2">
+                    {techStack.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="rounded-md"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
 
-              <div>
-                <h4 className="font-semibold">
-                  Forkify — Recipe Discovery Application
-                </h4>
-
-                <p className="text-sm text-muted-foreground">
-                  JavaScript • HTML • CSS
-                </p>
-
-                <ul className="mt-2 list-disc pl-5 text-muted-foreground">
-                  <li>
-                    Built a recipe search application with dynamic data
-                    rendering and interactive UI.
-                  </li>
-
-                  <li>
-                    Delivered a fully responsive experience across screen sizes.
-                  </li>
-                </ul>
-              </div>
+                  <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
+                    {bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </section>
 

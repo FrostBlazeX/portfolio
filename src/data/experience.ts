@@ -1,7 +1,8 @@
 export const experiences = [
   {
     company: "Numro",
-    role: "Frontend Engineer / AI Engineer",
+    role: "Frontend Developer (Remote) / AI Engineer",
+    location: "Oxford, United Kingdom",
     period: "March 2026 - Present",
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     achievements: [
