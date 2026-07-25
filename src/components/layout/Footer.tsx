@@ -14,7 +14,7 @@ function Footer() {
   return (
     <footer>
       <Container>
-        <div className=" border-t py-14">
+        <div className="border-t py-16 md:py-24">
           <div className="grid gap-12 md:grid-cols-3">
             {/* Brand */}
             <div className="space-y-4">

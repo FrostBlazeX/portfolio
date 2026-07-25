@@ -2,8 +2,7 @@ import Section from "@/components/ui/Section";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Card, CardContent } from "@/components/ui/card";
-
-const techStack = ["JavaScript", "TypeScript", "React", "Next.js", "Node.js"];
+import { flatSkills } from "@/data/skills";
 
 function AboutPage() {
   return (
@@ -49,16 +48,21 @@ function AboutPage() {
             <h2 className="text-2xl font-semibold">Tech Stack</h2>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {techStack.map((tech) => (
-                <Card
-                  key={tech}
-                  className="transition-colors hover:border-primary"
-                >
-                  <CardContent className="flex items-center justify-center p-6">
-                    <span className="font-medium">{tech}</span>
-                  </CardContent>
-                </Card>
-              ))}
+              {flatSkills.map((skill) => {
+                const Icon = skill.icon;
+
+                return (
+                  <Card
+                    key={skill.name}
+                    className="transition-colors hover:border-primary"
+                  >
+                    <CardContent className="flex items-center justify-center gap-3 p-6">
+                      <Icon className="h-5 w-5 shrink-0 text-muted-foreground" />
+                      <span className="font-medium">{skill.name}</span>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </div>
