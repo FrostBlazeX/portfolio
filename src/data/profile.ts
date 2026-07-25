@@ -2,8 +2,6 @@ export interface Profile {
   name: string;
   title: string;
   shortBio: string;
-
-  //   resumeUrl: string;
 }
 
 export const profile: Profile = {
