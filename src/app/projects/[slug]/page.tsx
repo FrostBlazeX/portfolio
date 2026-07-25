@@ -1,13 +1,40 @@
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { getProjectBySlug } from "@/data/project";
+import { getProjectBySlug, projects } from "@/data/project";
 import { Badge } from "@/components/ui/badge";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import type { Metadata } from "next";
+
+export function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return { title: "Project Not Found | Evan Ohemi" };
+  }
+
+  const title = `${project.name} | Evan Ohemi`;
+  const description = project.longDescription;
+
+  return {
+    title,
+    description,
+    openGraph: { title, description },
+  };
+}
 
 async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

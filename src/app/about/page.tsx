@@ -3,6 +3,17 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Card, CardContent } from "@/components/ui/card";
 import { flatSkills } from "@/data/skills";
+import type { Metadata } from "next";
+
+const title = "About | Evan Ohemi";
+const description =
+  "Learn more about Evan Ohemi, a Frontend Developer based in Nigeria specializing in React, Next.js, TypeScript, and Tailwind CSS.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: { title, description },
+};
 
 function AboutPage() {
   return (

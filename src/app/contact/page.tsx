@@ -3,6 +3,17 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Metadata } from "next";
+
+const title = "Contact | Evan Ohemi";
+const description =
+  "Get in touch with Evan Ohemi for frontend development opportunities, freelance projects, and collaborations.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: { title, description },
+};
 
 const contactLinks = [
   {

@@ -12,10 +12,14 @@ import { skills } from "@/data/skills";
 import { experiences } from "@/data/experience";
 import { getProjectBySlug } from "@/data/project";
 
+const title = "Resume | Evan Ohemi";
+const description =
+  "Frontend Developer resume showcasing experience, skills, projects, and certifications.";
+
 export const metadata: Metadata = {
-  title: "Resume | Evan Ohemi",
-  description:
-    "Frontend Developer resume showcasing experience, skills, projects, and certifications.",
+  title,
+  description,
+  openGraph: { title, description },
 };
 
 // Hand-picked highlights matching the downloadable PDF resume, kept separate

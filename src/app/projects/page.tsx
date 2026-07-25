@@ -3,6 +3,17 @@ import Section from "@/components/ui/Section";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { projects } from "@/data/project";
+import type { Metadata } from "next";
+
+const title = "Projects | Evan Ohemi";
+const description =
+  "A collection of web applications and frontend projects built by Evan Ohemi using React, TypeScript, Next.js, and JavaScript.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: { title, description },
+};
 
 function ProjectsPage() {
   return (
