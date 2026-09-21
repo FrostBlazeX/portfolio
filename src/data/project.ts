@@ -21,10 +21,43 @@ export type ProjectCategory =
   | "API Project"
   | "Landing Page"
   | "Travel"
+  | "Web Application"
   | "Clone";
 
 export const projects: Project[] = (
   [
+    {
+      name: "Frontpage",
+      slug: "front-page",
+      description: "Read and manage RSS articles in one place.",
+      longDescription:
+        "A React and TypeScript application for reading and managing RSS articles, featuring a responsive interface, article organization, and a scalable component architecture.",
+      techStack: ["HTML", "Tailwind CSS", "TypeScript"],
+      githubUrl: "https://github.com/FrostBlazeX/Frontpage",
+      liveUrl: "https://frontpage-tau.vercel.app/app",
+      featured: true,
+      image: "/projects/front-page.jpg",
+      year: 2026,
+      category: "Web Application",
+      highlights: [
+        "Responsive RSS article reader",
+        "RSS feed integration",
+        "Article reading and management",
+        "Reusable UI components",
+        "TypeScript integration",
+      ],
+      features: [
+        "Read RSS articles",
+        "Manage and organize articles",
+        "Responsive article interface",
+      ],
+      challenges: [
+        "RSS feed integration",
+        "TypeScript application architecture",
+        "Efficient article data management",
+      ],
+    },
+
     {
       name: "Storefront",
       slug: "store-front",
@@ -191,7 +224,7 @@ export const projects: Project[] = (
       techStack: ["HTML", "SCSS", "JavaScript"],
       githubUrl: "https://github.com/FrostBlazeX/forkify-frost",
       liveUrl: "https://forkify-frost.vercel.app/",
-      featured: true,
+      featured: false,
       image: "/projects/forkify.jpg",
       year: 2025,
       category: "API Project",
